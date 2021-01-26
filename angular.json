@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "barcode-scanner"
+  "defaultProject": "barcode-scanner",
+  "cli": {
+    "analytics": "58083f84-bf25-433c-8de4-82412b55f42b"
+  }
 }
