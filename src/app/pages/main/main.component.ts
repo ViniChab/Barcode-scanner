@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/shared/models/product.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { DisplayComponent } from 'src/app/shared/components/display/display.component';
+import { Product } from 'src/app/shared/models/product.model';
 import { DatabaseService } from 'src/app/shared/services/database.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { DatabaseService } from 'src/app/shared/services/database.service';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
+  @ViewChild(DisplayComponent) public display: DisplayComponent;
   public scannedProducts: Product[] = [];
 
   constructor(private databaseService: DatabaseService) {}
@@ -18,6 +20,6 @@ export class MainComponent implements OnInit {
   public onScanned(productName: string): void {
     const product = this.databaseService.getProduct(productName);
 
-    product ? this.scannedProducts.push(product) : ''
+    product ? this.scannedProducts.push(product) : this.display.showError();
   }
 }
