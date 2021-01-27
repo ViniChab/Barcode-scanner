@@ -18,6 +18,10 @@ export class DisplayComponent implements OnChanges {
     }
   }
 
+  public removeItem(itemIndex: number): void {
+    this.scannedProducts.splice(itemIndex, 1);
+  }
+
   public showError(): void {
     this.notFoundError = true;
 
