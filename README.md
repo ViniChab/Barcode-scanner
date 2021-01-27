@@ -1,27 +1,16 @@
 # BarcodeScanner
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+* This project was created using Angular CLI version 11.0.2.
 
-## Development server
+## Running the project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* In order to run the projet, you'll need NPM version 6.14.X or above;
+* Clone this repository;
+* Access this project's root folder;
+* Run `npm i` in order to install its dependencies;
+* Run `npm start` in order to start the appliation;
+* NOTE: This project was created and tested on Ubuntu 20.04;
 
-## Code scaffolding
+## Accessing the application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* You'll be able to access it on `http://localhost:4200/`;
