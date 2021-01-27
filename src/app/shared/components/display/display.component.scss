@@ -20,34 +20,69 @@
     padding: 0px;
     text-align: left;
     white-space: break-spaces;
-    overflow-y: auto;
 
-    .tag {
-      width: calc(100% - 16px);
-      margin: 8px;
-      background: #007bff;
-      color: white;
-      line-height: 46px;
-      height: 46px;
-      border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
+    .stock-info {
+      padding: 24px;
+      padding-bottom: 0px;
+
+      .stock-title {
+        font-weight: bold;
+      }
 
       p {
         display: inline-block;
-        width: 40%;
-        text-align: left;
-        padding-left: 18px;
+      }
+    }
+
+    .total {
+      margin-bottom: 0px;
+      padding: 12px 24px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+      p {
+        display: inline-block;
       }
 
-      button {
+      .total-title {
+        font-weight: bold;
+      }
+
+      .total-sum {
+        float: right;
+      }
+    }
+
+    .selected-products {
+      overflow-y: auto;
+      height: 224px;
+
+      .tag {
+        width: calc(100% - 16px);
+        margin: 8px;
+        background: #007bff;
+        color: white;
+        line-height: 46px;
+        height: 46px;
+        border-radius: 5px;
+        font-weight: bold;
         display: inline-block;
-        margin-left: 12px;
-        height: 32px;
-        line-height: 8px;
-        width: 78px;
-        padding-left: 8px;
-        cursor: pointer;
+
+        p {
+          display: inline-block;
+          width: 40%;
+          text-align: left;
+          padding-left: 18px;
+        }
+
+        button {
+          display: inline-block;
+          margin-left: 12px;
+          height: 32px;
+          line-height: 8px;
+          width: 78px;
+          padding-left: 8px;
+          cursor: pointer;
+        }
       }
     }
 
@@ -58,6 +93,7 @@
       transition: 0.4s;
       opacity: 1;
       position: absolute;
+      top: 66px;
 
       .error-toast {
         background: #ff5a5a;

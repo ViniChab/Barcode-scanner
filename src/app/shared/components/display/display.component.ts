@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { DatabaseService } from '../../services/database.service';
 
 @Component({
   selector: 'app-display',
@@ -10,7 +11,7 @@ export class DisplayComponent implements OnChanges {
   @Input() public scannedProducts: Product[];
   public notFoundError = false;
 
-  constructor() {}
+  constructor(public databaseService: DatabaseService) {}
 
   ngOnChanges(simpleChanges: SimpleChanges): void {
     if (simpleChanges.scannedProducts?.currentValue) {
@@ -28,5 +29,19 @@ export class DisplayComponent implements OnChanges {
     setTimeout(() => {
       this.notFoundError = false;
     }, 3000);
+  }
+
+  public get totalPrice(): string {
+    let priceSum = 0;
+    this.scannedProducts.forEach((item) => {
+      const itemPrice = +item.price.replace('$', '');
+      priceSum += itemPrice;
+    });
+
+    const sumString = `$${priceSum}`;
+
+    return sumString.split('.').pop()?.length === 1 ?
+      sumString + '0' :
+      sumString;
   }
 }

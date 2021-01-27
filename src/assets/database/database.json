@@ -1,10 +1,11 @@
 [
-  { "name": "Eraser", "price": "$0,40" },
-  { "name": "Paintbrush", "price": "$2,00" },
-  { "name": "Notebook", "price": "$7,50" },
-  { "name": "Calculator", "price": "$5,99" },
-  { "name": "Ruler", "price": "$3,20" },
-  { "name": "Post-it", "price": "$1,20" },
-  { "name": "Scissors", "price": "$4,50" },
-  { "name": "Pencil", "price": "$0,99" }
+  { "name": "Eraser", "price": "$0.40" },
+  { "name": "Paintbrush", "price": "$2.00" },
+  { "name": "Notebook", "price": "$7.50" },
+  { "name": "Calculator", "price": "$5.99" },
+  { "name": "Ruler", "price": "$3.20" },
+  { "name": "Post-it", "price": "$1.20" },
+  { "name": "Scissors", "price": "$4.50" },
+  { "name": "Pencil", "price": "$0.99" },
+  { "name": "Diary", "price": "$6.50" }
 ]

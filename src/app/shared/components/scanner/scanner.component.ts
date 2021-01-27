@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./scanner.component.scss'],
 })
 export class ScannerComponent implements OnInit {
-  @Output() public scanned = new EventEmitter()
+  @Output() public scanned = new EventEmitter();
   public scannerForm: FormGroup = this.formBuilder.group({
     productName: ['', Validators.required],
   });

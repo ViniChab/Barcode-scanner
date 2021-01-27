@@ -1,17 +1,32 @@
 <div class="display-wrapper">
   <img class="display-body" src="../../../../assets/images/display.png" />
   <div class="display-screen">
+    <div class="stock-info">
+      <p class="stock-title">Available products:</p>
+      <br />
+      <ng-container
+        *ngFor="let product of databaseService.products; let isLast = last"
+      >
+        <p>{{ product.name }}<ng-container *ngIf="!isLast">, </ng-container></p>
+      </ng-container>
+    </div>
     <div [ngClass]="{ hidden: !notFoundError }" class="error-wrapper">
       <div class="error-toast">No product was found!</div>
     </div>
-    <ng-container *ngFor="let product of scannedProducts; let i = index">
-      <div class="tag">
-        <p class="product-name">{{ product.name }}</p>
-        <p class="product-price">
-          {{ product.price }}
-        </p>
-        <button (click)="removeItem(i)" class="btn btn-danger">Remove</button>
-      </div>
-    </ng-container>
+    <div class="selected-products">
+      <ng-container *ngFor="let product of scannedProducts; let i = index">
+        <div class="tag">
+          <p class="product-name">{{ product.name }}</p>
+          <p class="product-price">
+            {{ product.price }}
+          </p>
+          <button (click)="removeItem(i)" class="btn btn-danger">Remove</button>
+        </div>
+      </ng-container>
+    </div>
+    <div class="total">
+      <p class="total-title">Total price:</p>
+      <p class="total-sum">{{ totalPrice }}</p>
+    </div>
   </div>
 </div>
