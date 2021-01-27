@@ -1,4 +1,4 @@
-# BarcodeScanner
+## Barcode Scanner
 
 * This project was created using Angular CLI version 11.0.2.
 
@@ -8,7 +8,7 @@
 * Clone this repository;
 * Access this project's root folder;
 * Run `npm i` in order to install its dependencies;
-* Run `npm start` in order to start the appliation;
+* Run `npm start` in order to start the application;
 * NOTE: This project was created and tested on Ubuntu 20.04;
 
 ## Accessing the application
