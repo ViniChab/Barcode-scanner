@@ -1,1 +1,9 @@
-<p>display works!</p>
+<div class="display-wrapper">
+  <img class="display-body" src="../../../../assets/images/display.png" />
+  <div class="display-screen">
+    <ng-container *ngFor="let product of scannedProducts">
+      <p class="product-name">{{ product.name }}</p>
+      <p class="product-price">{{ product.price }}</p>
+    </ng-container>
+  </div>
+</div>

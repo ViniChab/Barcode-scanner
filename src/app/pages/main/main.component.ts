@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/shared/models/product.model';
+
 import { DatabaseService } from 'src/app/shared/services/database.service';
 
 @Component({
@@ -8,13 +9,15 @@ import { DatabaseService } from 'src/app/shared/services/database.service';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  public products: Product[] = [];
+  public scannedProducts: Product[] = [];
 
-  constructor(private databaseService: DatabaseService) {
-    this.databaseService.getProducts().subscribe(res => {
-      this.products = res;
-    })
-  }
+  constructor(private databaseService: DatabaseService) {}
 
   ngOnInit(): void {}
+
+  public onScanned(productName: string): void {
+    const product = this.databaseService.getProduct(productName);
+
+    product ? this.scannedProducts.push(product) : ''
+  }
 }

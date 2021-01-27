@@ -1,0 +1,21 @@
+<div class="scanner-wrapper">
+  <form [formGroup]="scannerForm" (submit)="submit()">
+    <div class="form-group">
+      <label for="productName">Product name</label>
+      <input
+        class="form-control"
+        id="productName"
+        placeholder="Enter the name of the product"
+        [formControlName]="'productName'"
+      />
+    </div>
+
+    <button
+      [disabled]="!scannerForm.controls['productName'].valid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Scan
+    </button>
+  </form>
+</div>

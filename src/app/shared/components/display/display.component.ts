@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-display',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display.component.scss'],
 })
 export class DisplayComponent implements OnInit {
+  @Input() public scannedProducts: Product[];
+
   constructor() {}
 
   ngOnInit(): void {}
