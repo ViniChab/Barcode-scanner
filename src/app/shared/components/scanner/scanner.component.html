@@ -12,6 +12,15 @@
     </div>
 
     <button
+      (click)="print()"
+      [disabled]="!scannedProducts.length"
+      type="button"
+      class="btn btn-danger"
+    >
+      Exit
+    </button>
+
+    <button
       [disabled]="!scannerForm.controls['productName'].valid"
       type="submit"
       class="btn btn-primary"

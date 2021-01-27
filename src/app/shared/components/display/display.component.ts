@@ -1,6 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { Product } from '../../models/product.model';
-import { DatabaseService } from '../../services/database.service';
+import { DatabaseService } from '../../services/database/database.service';
 
 @Component({
   selector: 'app-display',
@@ -42,6 +42,6 @@ export class DisplayComponent implements OnChanges {
 
     return sumString.split('.').pop()?.length === 1 ?
       sumString + '0' :
-      sumString;
+      sumString.substr(0,6);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ScannerComponent implements OnInit {
   @Output() public scanned = new EventEmitter();
+  @Input() public scannedProducts = null;
   public scannerForm: FormGroup = this.formBuilder.group({
     productName: ['', Validators.required],
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {}
 
@@ -20,5 +23,9 @@ export class ScannerComponent implements OnInit {
     const form = this.scannerForm.getRawValue() as { productName: string };
     this.scanned.emit(form.productName);
     this.scannerForm.reset();
+  }
+
+  public print(): void {
+    window.print();
   }
 }

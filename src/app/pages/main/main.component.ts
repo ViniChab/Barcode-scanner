@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { DisplayComponent } from 'src/app/shared/components/display/display.component';
 import { Product } from 'src/app/shared/models/product.model';
-import { DatabaseService } from 'src/app/shared/services/database.service';
+import { DatabaseService } from 'src/app/shared/services/database/database.service';
 
 @Component({
   selector: 'app-main',

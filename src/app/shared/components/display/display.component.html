@@ -13,20 +13,24 @@
     <div [ngClass]="{ hidden: !notFoundError }" class="error-wrapper">
       <div class="error-toast">No product was found!</div>
     </div>
-    <div class="selected-products">
-      <ng-container *ngFor="let product of scannedProducts; let i = index">
-        <div class="tag">
-          <p class="product-name">{{ product.name }}</p>
-          <p class="product-price">
-            {{ product.price }}
-          </p>
-          <button (click)="removeItem(i)" class="btn btn-danger">Remove</button>
-        </div>
-      </ng-container>
-    </div>
-    <div class="total">
-      <p class="total-title">Total price:</p>
-      <p class="total-sum">{{ totalPrice }}</p>
+    <div>
+      <div class="selected-products">
+        <ng-container *ngFor="let product of scannedProducts; let i = index">
+          <div class="tag">
+            <p class="product-name">{{ product.name }}</p>
+            <p class="product-price">
+              {{ product.price }}
+            </p>
+            <button (click)="removeItem(i)" class="btn btn-danger">
+              Remove
+            </button>
+          </div>
+        </ng-container>
+      </div>
+      <div class="total">
+        <p class="total-title">Total price:</p>
+        <p class="total-sum">{{ totalPrice }}</p>
+      </div>
     </div>
   </div>
 </div>

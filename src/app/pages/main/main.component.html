@@ -1,4 +1,7 @@
 <div class="main-wrapper">
   <app-display [scannedProducts]="scannedProducts"></app-display>
-  <app-scanner (scanned)="onScanned($event)"></app-scanner>
+  <app-scanner
+    [scannedProducts]="scannedProducts"
+    (scanned)="onScanned($event)"
+  ></app-scanner>
 </div>
