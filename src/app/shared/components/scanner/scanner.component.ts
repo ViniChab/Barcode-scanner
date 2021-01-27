@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-scanner',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ScannerComponent implements OnInit {
   @Output() public scanned = new EventEmitter();
-  @Input() public scannedProducts = null;
+  @Input() public scannedProducts: Product[] = [];
   public scannerForm: FormGroup = this.formBuilder.group({
     productName: ['', Validators.required],
   });

@@ -8,7 +8,7 @@ import { DatabaseService } from '../../services/database/database.service';
   styleUrls: ['./display.component.scss'],
 })
 export class DisplayComponent implements OnChanges {
-  @Input() public scannedProducts: Product[];
+  @Input() public scannedProducts: Product[] = [];
   public notFoundError = false;
 
   constructor(public databaseService: DatabaseService) {}
@@ -33,7 +33,7 @@ export class DisplayComponent implements OnChanges {
 
   public get totalPrice(): string {
     let priceSum = 0;
-    this.scannedProducts.forEach((item) => {
+    this.scannedProducts?.forEach((item) => {
       const itemPrice = +item.price.replace('$', '');
       priceSum += itemPrice;
     });
@@ -42,6 +42,6 @@ export class DisplayComponent implements OnChanges {
 
     return sumString.split('.').pop()?.length === 1 ?
       sumString + '0' :
-      sumString.substr(0,6);
+      sumString.substr(0, 6);
   }
 }

@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ScannerComponent } from './scanner.component';
 
@@ -8,9 +11,14 @@ describe('ScannerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScannerComponent ]
-    })
-    .compileComponents();
+      imports: [
+        CommonModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+      ],
+      declarations: [ScannerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

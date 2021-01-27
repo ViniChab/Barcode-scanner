@@ -13,7 +13,7 @@
 
     <button
       (click)="print()"
-      [disabled]="!scannedProducts.length"
+      [disabled]="scannedProducts.length === 0"
       type="button"
       class="btn btn-danger"
     >
